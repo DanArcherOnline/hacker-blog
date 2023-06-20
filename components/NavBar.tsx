@@ -4,11 +4,11 @@ import { ReactNode } from 'react'
 interface Props {
     isOpen: boolean
     setMenuOpen: (isOpen: boolean) => void
-    setRightPanelOpen: (isOpen: boolean) => void
+    setRightSidePanelOpen: (isOpen: boolean) => void
     children?: ReactNode
 }
 
-export default function NavBar({ isOpen: isMenuOpen, setMenuOpen, setRightPanelOpen, children }: Props) {
+export default function NavBar({ isOpen: isMenuOpen, setMenuOpen, setRightSidePanelOpen: setRightPanelOpen, children }: Props) {
     return (
         <div className="mx-2 lg:mx-4 relative z-30">
             <header className="absolute left-0 font-black text-base w-full mx-auto bg-card-grey py-4 px-8 top-0 uppercase rounded-b">

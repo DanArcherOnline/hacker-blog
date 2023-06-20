@@ -2,6 +2,7 @@
 
 import CTFItem from "@/components/CTFItem";
 import Certificates from "@/components/Certificates";
+import CertificatesCard from "@/components/CertificatesCard";
 import FeaturedPost from "@/components/FeaturedPost";
 import MainContentColumn from "@/components/MainContentColumn";
 import NavBar from "@/components/NavBar";
@@ -15,10 +16,26 @@ import Head from "next/head";
 import Link from "next/link";
 import { useState } from "react";
 
+enum RightSidePanelContent {
+  CtfBadges,
+  Certificates,
+}
+
+const getRightSidePanelContent = (rightPanelContent: RightSidePanelContent) => {
+  switch (rightPanelContent) {
+    case RightSidePanelContent.CtfBadges:
+      return (<CTFItem />)
+    case RightSidePanelContent.Certificates:
+      return (<Certificates />)
+  }
+}
+
 export default function Home() {
-  const [isMenuOpen, setMenuOpen] = useState(false)
-  const [isRightPanelOpen, setRightPanelOpen] = useState(false)
+  const [isMenuOpen, setMenuOpen] = useState<boolean>(false)
+  const [isRightPanelOpen, setRightSidePanelOpen] = useState<boolean>(false)
+  const [rightSidePanelContent, setRightSidePanelContent] = useState<RightSidePanelContent>(RightSidePanelContent.CtfBadges)
   return (
+
     <div className="bg-page-bg-grey max-h-screen overflow-hidden">
       <div className="lg:max-w-screen-4xl mx-auto">
         <Head>
@@ -29,7 +46,7 @@ export default function Home() {
         <SideNavMenu
           isOpen={isMenuOpen}
           setMenuOpen={setMenuOpen}
-          setRightPanelOpen={setRightPanelOpen}
+          setRightPanelOpen={setRightSidePanelOpen}
         >
           <Link
             href='/'
@@ -47,7 +64,8 @@ export default function Home() {
             className="-m-4 p-4 flex items-center space-x-3 rounded-md hover:bg-accent-pink transition duration-300"
             onClick={() => {
               setMenuOpen(false)
-              setRightPanelOpen(true)
+              setRightSidePanelOpen(true)
+              setRightSidePanelContent(RightSidePanelContent.Certificates)
             }}
           >
             <div>Certficates</div>
@@ -56,7 +74,8 @@ export default function Home() {
             className="-m-4 p-4 flex items-center space-x-3 rounded-md hover:bg-accent-pink transition duration-300"
             onClick={() => {
               setMenuOpen(false)
-              setRightPanelOpen(true)
+              setRightSidePanelOpen(true)
+              setRightSidePanelContent(RightSidePanelContent.CtfBadges)
             }}
           >
             <div>CTF & Challenges</div>
@@ -71,14 +90,18 @@ export default function Home() {
         </SideNavMenu>
         <RightSidePanel
           isOpen={isRightPanelOpen}
-          setOpen={setRightPanelOpen}
-        />
+          onClose={() => setRightSidePanelOpen(false)}
+        >
+          {
+            getRightSidePanelContent(rightSidePanelContent)
+          }
+        </RightSidePanel>
 
         {/* Page Content */}
         <NavBar
           isOpen={isMenuOpen}
           setMenuOpen={setMenuOpen}
-          setRightPanelOpen={setRightPanelOpen}
+          setRightSidePanelOpen={setRightSidePanelOpen}
         >
           <Link
             href='/'
@@ -92,12 +115,18 @@ export default function Home() {
           </Link>
           <div
             className="lg:hidden cursor-pointer"
-            onClick={() => setRightPanelOpen(true)}
+            onClick={() => {
+              setRightSidePanelContent(RightSidePanelContent.Certificates)
+              setRightSidePanelOpen(true)
+            }}
           >Certificates
           </div>
           <div
             className="xl:hidden cursor-pointer"
-            onClick={() => setRightPanelOpen(true)}
+            onClick={() => {
+              setRightSidePanelContent(RightSidePanelContent.CtfBadges)
+              setRightSidePanelOpen(true)
+            }}
           >CTF & Challenges
           </div>
           <Link
@@ -105,12 +134,12 @@ export default function Home() {
           >Resume
           </Link>
         </NavBar>
-        <main className="grid grid-cols-9 max-h-screen">
 
+        <main className="grid grid-cols-9 max-h-screen">
           {/* left side bar */}
           <div className="hidden p-4 pr-2 lg:flex flex-col lg:col-span-3 xl:col-span-2 pt-[4.5rem] gap-4 max-h-screen overflow-y-scroll overflow-x-hidden scrollbar-hide">
             <ProfileCard />
-            <Certificates />
+            <CertificatesCard />
           </div>
 
           <MainContentColumn>

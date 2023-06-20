@@ -46,7 +46,7 @@ export default function PostPage() {
                 <NavBar
                     isOpen={isMenuOpen}
                     setMenuOpen={setMenuOpen}
-                    setRightPanelOpen={setRightPanelOpen}
+                    setRightSidePanelOpen={setRightPanelOpen}
                 >
                     <Link
                         href='/'
