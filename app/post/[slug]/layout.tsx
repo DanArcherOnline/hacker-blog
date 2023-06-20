@@ -1,4 +1,4 @@
-import { Lato } from 'next/font/google'
+import { Inter, Lato, Source_Serif_4 } from 'next/font/google'
 import './globals.css'
 
 const lato = Lato({
@@ -6,6 +6,18 @@ const lato = Lato({
   subsets: ['latin'],
   variable: '--font-lato'
 })
+
+const inter = Inter({
+  subsets: ['latin'],
+  variable: '--font-inter'
+})
+
+const sourceSerif4 = Source_Serif_4({
+  subsets: ['latin'],
+  variable: '--font-source-serif-4'
+})
+
+
 
 export const metadata = {
   title: 'Create Next App',
@@ -20,7 +32,7 @@ export default function RootLayout({
 
   return (
     <html lang="en">
-      <body className={`${lato.className}`}>
+      <body className={`${lato.className} ${inter.variable} ${sourceSerif4.variable}`}>
         {children}
       </body>
     </html>
