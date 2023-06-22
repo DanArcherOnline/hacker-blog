@@ -10,6 +10,8 @@ import Head from "next/head"
 import Image from "next/image"
 import Link from "next/link"
 import { useState } from "react"
+import { RichTextComponents } from "./RichTextComponents"
+
 
 interface Props {
     post: Post
@@ -80,7 +82,7 @@ export default function PostPage({ post }: Props) {
                     </div>
                     <div className="p-2 font-sourceSerif4 font-light text-body-text-grey md:px-8 md:max-w-4xl mx-auto z-20 ">
                         <div className="bg-transparent md:bg-card-grey md:rounded md:-mt-32 md:p-10 text-lg">
-                            <PortableText value={post.body} />
+                            <PortableText value={post.body} components={RichTextComponents} onMissingComponent={false} />
                         </div>
                     </div>
 
