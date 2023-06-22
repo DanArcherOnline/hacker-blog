@@ -10,7 +10,7 @@ interface Props {
 
 export default function NavBar({ isOpen: isMenuOpen, setMenuOpen, setRightSidePanelOpen: setRightPanelOpen, children }: Props) {
     return (
-        <div className="mx-2 lg:mx-4 relative z-30">
+        <div className="mx-2 lg:mx-4 relative z-30 font-lato">
             <header className="absolute left-0 font-black text-base w-full mx-auto bg-card-grey py-4 px-8 top-0 uppercase rounded-b">
                 <div className="flex justify-between items-center">
                     <div className="lg:w-0 lg:flex-1">

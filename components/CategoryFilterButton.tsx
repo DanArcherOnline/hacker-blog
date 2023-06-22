@@ -3,16 +3,19 @@ import FlagIcon from "./FlagIcon"
 import TutorialIcon from "./TutorialIcon"
 
 export enum Category {
-    Tutorial,
-    CTF,
-    General,
+    Tutorial = "Tutorial",
+    CTF = "Walkthough",
+    General = "General",
+    All = "All",
 }
 
 interface Props {
+    selected?: boolean
     category: Category
+    onClick: () => void
 }
 
-export default function CategoryFilterButton({ category }: Props) {
+export default function CategoryFilterButton({ category, selected, onClick }: Props) {
     const renderIcon = () => {
         switch (category) {
             case Category.Tutorial:
@@ -24,7 +27,7 @@ export default function CategoryFilterButton({ category }: Props) {
         }
     }
     return (
-        <div className="flex items-center justify-center border-2 rounded-md w-10 h-10 border-card-content-grey text-card-content-grey hover:border-white hover:text-white">
+        <div onClick={onClick} className={`flex items-center justify-center border-2 rounded-md w-10 h-10 border-card-content-grey text-card-content-grey hover:border-accent-pink hover:text-accent-pink ${selected && 'border-white text-white'}`}>
             {renderIcon()}
         </div>
     )
