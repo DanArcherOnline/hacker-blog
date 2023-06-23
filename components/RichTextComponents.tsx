@@ -1,28 +1,24 @@
-import { urlFor } from "@/sanity/sanity-utils"
-import Image from "next/image"
-
-const blockComponents: any = {
-
-    // Ex. 1: customizing common block types
-    h1: ({ children }: any) => <div><h1 className="text-3xl">{children}</h1></div>,
-    h2: ({ children }: any) => <h1 className="text-blue-300 text-2xl">{children}</h1>,
-    h3: ({ children }: any) => <h1 className="text-3xl">{children}</h1>,
-    h4: ({ children }: any) => <h1 className="text-3xl">{children}</h1>,
-    blockquote: ({ children }: any) => <blockquote className="border-l-purple-500">{children}</blockquote>,
-
-}
+import { urlFor } from "@/sanity/sanity-utils";
+import Image from "next/image";
+import { stringify } from "querystring";
+import Refractor from "react-refractor";
+import "../refractor-registrars";
 
 export const RichTextComponents = {
     types: {
         image: ({ value }: any) => {
+            console.log(stringify(value))
             return <div className="relative w-full h-96 mx-auto">
                 <Image
                     className="object-contain "
                     src={urlFor(value).url()}
-                    alt="blog post image"
+                    alt={value.alt}
                     fill />
             </div>
         },
+        code: ({ value }: any) => {
+            return <Refractor value={value.code} language={value.language} markers={value.highlightedLines} />
+        }
     },
     marks: {
         link: ({ children, value }: any) => {
