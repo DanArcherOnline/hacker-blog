@@ -131,7 +131,9 @@ export default function Homepage({
                         <div>CTF & Challenges</div>
                     </div>
                     <Link
-                        href='#'
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        href='/resume.pdf'
                         className="-m-4 p-4 flex items-center space-x-3 rounded-md hover:bg-accent-pink transition duration-300"
                     >
                         <div>Download Resume</div>
@@ -179,10 +181,12 @@ export default function Homepage({
                         }}
                     >CTF & Challenges
                     </div>
-                    <Link
-                        href='#'
+                    <a
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        href='/resume.pdf'
                     >Resume
-                    </Link>
+                    </a>
                 </NavBar>
 
                 <main className="grid grid-cols-9 max-h-screen">

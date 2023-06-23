@@ -4,7 +4,7 @@ import TutorialIcon from "./TutorialIcon"
 
 export enum Category {
     Tutorial = "Tutorial",
-    CTF = "Walkthough",
+    CTF = "Walkthrough",
     General = "General",
     All = "All",
 }
