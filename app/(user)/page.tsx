@@ -1,9 +1,18 @@
 import Homepage from "@/components/Homepage";
-import { getPosts } from "@/sanity/sanity-utils";
+import { getCertificates, getCtfBadges, getFeaturedPost, getPosts } from "@/sanity/sanity-utils";
 
 export default async function Home() {
   const posts = await getPosts()
+  const featuredPost = await getFeaturedPost()
+  const certificates = await getCertificates()
+  const ctfBadges = await getCtfBadges()
+
   return (
-    <Homepage posts={posts} />
+    <Homepage
+      posts={posts}
+      featuredPost={featuredPost.post}
+      certificates={certificates}
+      ctfBadges={ctfBadges}
+    />
   )
 }

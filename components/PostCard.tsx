@@ -1,4 +1,4 @@
-import { Post } from "@/types/Post"
+import { Post } from "@/types/types"
 import Image from "next/image"
 import Link from "next/link"
 import { urlFor } from '../sanity/sanity-utils'

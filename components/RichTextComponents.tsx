@@ -1,13 +1,11 @@
 import { urlFor } from "@/sanity/sanity-utils";
 import Image from "next/image";
-import { stringify } from "querystring";
 import Refractor from "react-refractor";
 import "../refractor-registrars";
 
 export const RichTextComponents = {
     types: {
         image: ({ value }: any) => {
-            console.log(stringify(value))
             return <div className="relative w-full h-96 mx-auto">
                 <Image
                     className="object-contain "

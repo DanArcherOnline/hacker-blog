@@ -1,4 +1,4 @@
-import { Post } from "@/types/Post";
+import { Post } from "@/types/types";
 import PostCard from "./PostCard";
 
 interface Props {

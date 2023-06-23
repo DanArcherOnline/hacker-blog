@@ -27,3 +27,24 @@ export type Slug = {
     _type: string
     current: string
 }
+
+export type FeaturedPost = {
+    post: Post
+}
+
+export type Certificate = {
+    name: string
+    company: string
+    logo: SanityImageSource
+    link: string
+}
+
+export type CTFBadge = {
+    badge: SanityImageSource
+    name: string
+    event: string
+    platform: string
+    post: {
+        slug: Slug
+    }
+}

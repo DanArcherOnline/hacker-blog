@@ -71,11 +71,6 @@ export default defineType({
           type: 'string',
           title: 'Alternative Text',
         },
-        {
-          name: 'caption',
-          type: 'string',
-          title: 'Caption Text',
-        }
       ]
     }),
     defineArrayMember({

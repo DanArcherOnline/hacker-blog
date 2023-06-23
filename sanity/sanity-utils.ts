@@ -1,4 +1,4 @@
-import { Post } from "@/types/Post";
+import { CTFBadge, Certificate, FeaturedPost, Post } from "@/types/types";
 import imageUrlBuilder from '@sanity/image-url';
 import { SanityImageSource } from "@sanity/image-url/lib/types/types";
 import { groq } from "next-sanity";
@@ -20,8 +20,35 @@ export async function getPosts(): Promise<Post[]> {
 
 const postQuery = groq`*[_type == "post" && slug.current == $slug][0]{
     ...,
-    tags[]->
+    tags[]->,
+    category->
 }`
 export async function getPost(slug: string): Promise<Post> {
     return client.fetch(postQuery, { slug })
+}
+
+const featurePostQuery = groq`*[_type == "featuredPost"][0] {
+    post->{
+        ...,
+        tags[]->,
+        category->
+    }
+}`
+export async function getFeaturedPost(): Promise<FeaturedPost> {
+    return client.fetch(featurePostQuery)
+}
+
+const certificatesQuery = groq`*[_type == "certificate"]`
+export async function getCertificates(): Promise<Certificate[]> {
+    return client.fetch(certificatesQuery)
+}
+
+const ctfBadgesQuery = groq`*[_type == "ctfBadge"]{
+    ...,
+    post->{
+        slug
+    }
+}`
+export async function getCtfBadges(): Promise<CTFBadge[]> {
+    return client.fetch(ctfBadgesQuery)
 }

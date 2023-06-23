@@ -15,7 +15,7 @@ export default function ProfileCard() {
                 />
                 <div className="absolute top-[40%] left-1/2 transform -translate-x-1/2 -translate-y-[40%] h-32 w-32 rounded-full border-2 border-purple-700 drop-shadow-xl overflow-clip">
                     <Image
-                        src="/../public/test_img.jpeg"
+                        src="/../public/profile_img.jpeg"
                         alt=""
                         fill
                         className="object-cover"

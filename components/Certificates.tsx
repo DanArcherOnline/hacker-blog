@@ -1,12 +1,15 @@
+import { Certificate } from "@/types/types";
 import CertificateItem from "./CertificateItem";
 
-export default function Certificates() {
+interface Props {
+    certificates: Certificate[]
+}
+
+export default function Certificates({ certificates }: Props) {
     return (
         <div className="space-y-4 ">
             <h1 className="font-black text-xl ml-2">Certificates (3)</h1>
-            <CertificateItem />
-            <CertificateItem />
-            <CertificateItem />
+            {certificates.map((certificate, i) => <CertificateItem key={i} certificate={certificate} />)}
         </div>
     )
 }
