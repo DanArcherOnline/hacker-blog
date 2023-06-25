@@ -9,7 +9,7 @@ interface Props {
 
 export default function CertificateItem({ certificate }: Props) {
     return (
-        <div className="flex flex-col">
+        <div className="flex flex-col group">
             <hr className="border-page-bg-grey" />
             <div className="pt-8">
                 <div className="flex items-center gap-2 mb-4">
@@ -18,7 +18,7 @@ export default function CertificateItem({ certificate }: Props) {
                             src={urlFor(certificate.logo).url()}
                             alt={`${certificate.company}'s logo for the ${certificate.name} certificate`}
                             fill
-                            className=" object-contain"
+                            className="object-contain group-hover:scale-110 group-hover:drop-shadow-md transform duration-300"
                         />
                     </div>
                     <div className="flex flex-col">

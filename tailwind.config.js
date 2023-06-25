@@ -33,8 +33,9 @@ module.exports = {
       borderRadius: {
         DEFAULT: '2.5rem'
       },
-      backgroundImage: {
-        'dragon-img': "url('https://images.unsplash.com/photo-1548412576-d92cb3275e23?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2374&q=80')",
+      dropShadow: {
+        'md': '0 6px 9px rgba(0, 0, 0, 0.6)',
+        'lg': '0 6px 7px rgba(0, 0, 0, 0.7)',
       }
     },
   },

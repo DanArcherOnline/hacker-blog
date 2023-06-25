@@ -33,9 +33,6 @@ export default function Homepage({
     certificates,
     ctfBadges: initialCtfBadges,
 }: Props) {
-    const [isMenuOpen, setMenuOpen] = useState<boolean>(false)
-    const [isRightPanelOpen, setRightSidePanelOpen] = useState<boolean>(false)
-    const [rightSidePanelContent, setRightSidePanelContent] = useState<RightSidePanelContent>(RightSidePanelContent.CtfBadges)
     const [posts, setPosts] = useState<Post[]>(initialPosts)
     const [ctfBadges, setCtfBadges] = useState<CTFBadge[]>(initialCtfBadges)
 
@@ -83,7 +80,7 @@ export default function Homepage({
     }
 
     return (
-        <div className="bg-page-bg-grey min-h-screen overflow-hidden">
+        <div className="bg-page-bg-grey min-h-screen overflow-hidden font-lato">
             <div className="lg:max-w-screen-4xl mx-auto">
                 <Head>
                     <title>Dan Archer Online</title>

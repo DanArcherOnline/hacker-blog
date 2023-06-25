@@ -24,13 +24,13 @@ export default function PostCard({ post }: Props) {
         }
     }
     return (
-        <Link href={`/post/${post.slug.current}`} >
-            <div className="bg-card-grey rounded p-6 break-inside-avoid-column drop-shadow-lg">
-                <div className="relative w-full h-52 mb-4">
+        <Link className="block group hover:scale-[1.02] transform duration-300" href={`/post/${post.slug.current}`} >
+            <div className="bg-card-grey hover:bg-[#29292b] rounded p-6 break-inside-avoid-column drop-shadow-lg">
+                <div className="relative w-full h-52 mb-4 rounded-3xl overflow-clip">
                     <Image
                         src={urlFor(post.mainImage).url()}
-                        alt='a dragon'
-                        className="object-cover rounded-3xl drop-shadow-lg"
+                        alt='feature image for blog post'
+                        className="object-cover rounded-3xl drop-shadow-lg group-hover:scale-105 transform duration-300"
                         fill
                     />
                 </div>

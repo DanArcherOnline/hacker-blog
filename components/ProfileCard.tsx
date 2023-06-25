@@ -13,7 +13,7 @@ export default function ProfileCard() {
                     alt=""
                     fill
                 />
-                <div className="absolute top-[40%] left-1/2 transform -translate-x-1/2 -translate-y-[40%] h-32 w-32 rounded-full border-2 border-purple-700 drop-shadow-xl overflow-clip">
+                <div className="absolute top-[40%] left-1/2 -translate-x-1/2 -translate-y-[40%] h-32 w-32 rounded-full border-2 border-purple-700 drop-shadow-xl overflow-clip hover:scale-110 group-hover:drop-shadow-md transform duration-300">
                     <Image
                         src="/../public/profile_img.jpeg"
                         alt=""
@@ -28,9 +28,9 @@ export default function ProfileCard() {
                 <h2 className=" font-extralight text-lg text-accent-pink mb-4">Cyber Security Specialist</h2>
                 <h3 className="font-light text-sm text-card-grey mb-2">@danarcheronline</h3>
                 <div className="flex gap-2 mb-4">
-                    <InstagramIcon className="text-card-grey h-6 w-6" />
-                    <LinkedInIcon className="text-card-grey h-6 w-6" />
-                    <GithubIcon className="text-card-grey h-6 w-6" />
+                    <a href='https://www.instagram.com/danarcheronline/'><InstagramIcon className="text-card-grey h-6 w-6 hover:scale-110 transform duration-300 hover:text-accent-pink" /></a>
+                    <a href='https://www.linkedin.com/in/danarcheronline/'><LinkedInIcon className="text-card-grey h-6 w-6 hover:scale-110 transform duration-300 hover:text-accent-pink" /></a>
+                    <a href='https://github.com/DanArcherOnline'><GithubIcon className="text-card-grey h-6 w-6 hover:scale-110 transform duration-300 hover:text-accent-pink" /></a>
                 </div>
                 <THMBadge />
             </div>

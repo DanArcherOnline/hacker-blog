@@ -3,7 +3,7 @@ import Script from 'next/script'
 
 function THMBadge() {
     return (
-        <div className='w-full'>
+        <a href='https://tryhackme.com/p/DanArcherOnline' className='w-full block hover:scale-110 group-hover:drop-shadow-md transform duration-300'>
             <Script src="https://tryhackme.com/badge/1380671" />
             <div className='relative h-12 w-full'>
                 <Image
@@ -15,8 +15,7 @@ function THMBadge() {
                     fill
                 />
             </div>
-
-        </div>
+        </a>
     )
 }
 

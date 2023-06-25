@@ -93,8 +93,6 @@ export default function NavigationComponents({ filterCtfBadges, certificates, ct
                     getRightSidePanelContent(rightSidePanelContent, certificates, ctfBadges)
                 }
             </RightSidePanel>
-
-            {/* Page Content */}
             <NavBar
                 isOpen={isMenuOpen}
                 setMenuOpen={setMenuOpen}
