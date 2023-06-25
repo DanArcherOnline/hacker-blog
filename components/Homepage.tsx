@@ -2,18 +2,15 @@
 import Certificates from "@/components/Certificates";
 import FeaturedPost from "@/components/FeaturedPost";
 import MainContentColumn from "@/components/MainContentColumn";
-import NavBar from "@/components/NavBar";
 import PostFilters from "@/components/PostFilters";
 import PostsMasonaryGrid from "@/components/PostsMasonaryGrid";
-import RightSidePanel from "@/components/RightSidePanel";
-import SideNavMenu from "@/components/SideNavMenu";
 import { CTFBadge, Certificate, Post } from "@/types/types";
 import Head from "next/head";
-import Link from "next/link";
 import { useState } from "react";
 import CTFBadges from './CTFBadges';
 import { Category } from "./CategoryFilterButton";
 import { LeftColumn } from './LeftColumn';
+import NavigationComponents from "./NavigationComponents";
 import { RightColumn } from './RightColumn';
 
 
@@ -92,103 +89,10 @@ export default function Homepage({
                     <title>Dan Archer Online</title>
                     <link rel="icon" href="/favicon.ico" />
                 </Head>
-
-                <SideNavMenu
-                    isOpen={isMenuOpen}
-                    setMenuOpen={setMenuOpen}
-                    setRightPanelOpen={setRightSidePanelOpen}
-                >
-                    <Link
-                        href='/'
-                        className="-m-4 p-4 flex items-center space-x-3 rounded-md hover:bg-accent-pink transition duration-300"
-                    >
-                        <div>Home</div>
-                    </Link>
-                    <Link
-                        href='#'
-                        className="-m-4 p-4 flex items-center space-x-3 rounded-md hover:bg-accent-pink transition duration-300"
-                    >
-                        <div>About Me</div>
-                    </Link>
-                    <div
-                        className="-m-4 p-4 flex items-center space-x-3 rounded-md hover:bg-accent-pink transition duration-300"
-                        onClick={() => {
-                            setMenuOpen(false)
-                            setRightSidePanelOpen(true)
-                            setRightSidePanelContent(RightSidePanelContent.Certificates)
-                        }}
-                    >
-                        <div>Certficates</div>
-                    </div>
-                    <div
-                        className="-m-4 p-4 flex items-center space-x-3 rounded-md hover:bg-accent-pink transition duration-300"
-                        onClick={() => {
-                            setMenuOpen(false)
-                            setRightSidePanelOpen(true)
-                            setRightSidePanelContent(RightSidePanelContent.CtfBadges)
-                        }}
-                    >
-                        <div>CTF & Challenges</div>
-                    </div>
-                    <Link
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        href='/resume.pdf'
-                        className="-m-4 p-4 flex items-center space-x-3 rounded-md hover:bg-accent-pink transition duration-300"
-                    >
-                        <div>Download Resume</div>
-                    </Link>
-
-                </SideNavMenu>
-                <RightSidePanel
-                    isOpen={isRightPanelOpen}
-                    onClose={() => setRightSidePanelOpen(false)}
-                >
-                    {
-                        getRightSidePanelContent(rightSidePanelContent, certificates, ctfBadges)
-                    }
-                </RightSidePanel>
-
-                {/* Page Content */}
-                <NavBar
-                    isOpen={isMenuOpen}
-                    setMenuOpen={setMenuOpen}
-                    setRightSidePanelOpen={setRightSidePanelOpen}
-                >
-                    <Link
-                        href='/'
-                        className="text-accent-pink"
-                    >Home
-                    </Link>
-                    <Link
-                        href='/post/about-me'
-                        className=""
-                    >About Me
-                    </Link>
-                    <div
-                        className="lg:hidden cursor-pointer"
-                        onClick={() => {
-                            setRightSidePanelContent(RightSidePanelContent.Certificates)
-                            setRightSidePanelOpen(true)
-                        }}
-                    >Certificates
-                    </div>
-                    <div
-                        className="xl:hidden cursor-pointer"
-                        onClick={() => {
-                            setRightSidePanelContent(RightSidePanelContent.CtfBadges)
-                            setRightSidePanelOpen(true)
-                        }}
-                    >CTF & Challenges
-                    </div>
-                    <a
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        href='/resume.pdf'
-                    >Resume
-                    </a>
-                </NavBar>
-
+                <NavigationComponents
+                    certificates={certificates}
+                    ctfBadges={ctfBadges}
+                    filterCtfBadges={filterCtfBadges} />
                 <main className="grid grid-cols-9 max-h-screen">
                     <LeftColumn certificates={certificates} />
                     <MainContentColumn>
