@@ -1,21 +1,21 @@
 "use client"
-
 import Certificates from "@/components/Certificates";
-import CertificatesCard from "@/components/CertificatesCard";
 import FeaturedPost from "@/components/FeaturedPost";
 import MainContentColumn from "@/components/MainContentColumn";
 import NavBar from "@/components/NavBar";
 import PostFilters from "@/components/PostFilters";
 import PostsMasonaryGrid from "@/components/PostsMasonaryGrid";
-import ProfileCard from "@/components/ProfileCard";
 import RightSidePanel from "@/components/RightSidePanel";
 import SideNavMenu from "@/components/SideNavMenu";
 import { CTFBadge, Certificate, Post } from "@/types/types";
 import Head from "next/head";
 import Link from "next/link";
 import { useState } from "react";
+import CTFBadges from './CTFBadges';
 import { Category } from "./CategoryFilterButton";
-import CTFBadges from "./ctfBadges";
+import { LeftColumn } from './LeftColumn';
+import { RightColumn } from './RightColumn';
+
 
 interface Props {
     posts: Post[]
@@ -190,12 +190,7 @@ export default function Homepage({
                 </NavBar>
 
                 <main className="grid grid-cols-9 max-h-screen">
-                    {/* left side bar */}
-                    <div className="hidden p-4 pr-2 lg:flex flex-col lg:col-span-3 xl:col-span-2 pt-[4.5rem] gap-4 max-h-screen overflow-y-scroll overflow-x-hidden scrollbar-hide">
-                        <ProfileCard />
-                        <CertificatesCard certificates={certificates} />
-                    </div>
-
+                    <LeftColumn certificates={certificates} />
                     <MainContentColumn>
                         <FeaturedPost post={featuredPost} />
                         <PostFilters postsCount={posts.length} onFilterChanged={filterPosts} />
@@ -203,11 +198,7 @@ export default function Homepage({
                     </MainContentColumn>
 
                     {/* right side bar */}
-                    <div className="hidden p-4 pl-2 xl:flex flex-col col-span-2 min-h-screen pt-[4.5rem] gap-4 max-h-screen overflow-y-scroll overflow-x-hidden scrollbar-hide">
-                        <div className="flex flex-col bg-card-grey w-auto p-6 space-y-4 rounded drop-shadow-lg">
-                            <CTFBadges ctfBadges={ctfBadges} onSearch={filterCtfBadges} />
-                        </div>
-                    </div>
+                    <RightColumn ctfBadges={ctfBadges} filterCtfBadges={filterCtfBadges} />
                 </main>
             </div>
         </div>
