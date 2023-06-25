@@ -68,7 +68,7 @@ export default function PostPage({ post }: Props) {
                     >About Me
                     </Link>
                 </NavBar>
-                <main className={`flex flex-col pt-20 font-inter `}>
+                <main className={`flex flex-col pt-20 font-inter pb-16`}>
                     <div className="flex flex-col p-2 gap-2 md:px-8 max-w-3xl mx-auto">
                         <h1 className="font-black text-4xl md:text-6xl">{post.title}</h1>
                     </div>
@@ -80,7 +80,7 @@ export default function PostPage({ post }: Props) {
                             className="object-cover md:p-2 lg:p-4 md:rounded"
                         />
                     </div>
-                    <div className="p-2 font-sourceSerif4 font-light text-body-text-grey md:px-8 md:max-w-4xl mx-auto z-20 ">
+                    <div className="p-2 font-light text-body-text-grey w-full md:px-8 md:max-w-4xl mx-auto z-20 ">
                         <div className="bg-transparent md:bg-card-grey md:rounded md:-mt-32 md:p-10 text-lg">
                             <PortableText value={post.body} components={RichTextComponents} onMissingComponent={false} />
                         </div>

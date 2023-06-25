@@ -6,44 +6,67 @@ import "../refractor-registrars";
 export const RichTextComponents = {
     types: {
         image: ({ value }: any) => {
-            return <div className="relative w-full h-96 mx-auto">
+            return <div className="relative w-full h-96 mx-auto mb-12 mt-8">
                 <Image
-                    className="object-contain "
+                    className="object-contain"
                     src={urlFor(value).url()}
                     alt={value.alt}
                     fill />
             </div>
         },
         code: ({ value }: any) => {
-            return <Refractor value={value.code} language={value.language} markers={value.highlightedLines} />
+            return <div className="w-full pb-8 pt-4">
+                <Refractor
+                    value={value.code}
+                    language={value.language}
+                    markers={value.highlightedLines}
+                    className="rounded-lg"
+                />
+            </div>
         }
     },
     marks: {
         link: ({ children, value }: any) => {
             const rel = !value.href.startsWith('/') ? 'noreferrer noopener' : undefined
             return (
-                <a className="text-blue-500" href={value.href} rel={rel}>
+                <a className="text-accent-pink hover:underline hover:underline-offset-2" href={value.href} rel={rel}>
                     {children}
                 </a>
             )
         },
+        strong: ({ children }: any) => {
+            return (
+                <span className="font-black">
+                    {children}
+                </span>
+            )
+        },
+        em: ({ children }: any) => {
+            return (
+                <span className="italic">
+                    {children}
+                </span>
+            )
+        },
+
     },
     block: {
-        h1: ({ children }: any) => <div><h1 className="text-blue-50 text-6xl">{children}</h1></div>,
-        h2: ({ children }: any) => <h1 className="text-blue-100 text-5xl">{children}</h1>,
-        h3: ({ children }: any) => <h1 className="text-blue-200 text-4xl">{children}</h1>,
-        h4: ({ children }: any) => <h1 className="text-blue-300 text-3xl">{children}</h1>,
-        h5: ({ children }: any) => <h1 className="text-blue-400 text-2xl">{children}</h1>,
-        h6: ({ children }: any) => <h1 className="text-blue-500 text-xl">{children}</h1>,
-        blockquote: ({ children }: any) => <blockquote className="border-l-purple-500 border-l-2">{children}</blockquote>,
+        normal: ({ children }: any) => <p className="font-sourceSerif4 pb-4 text-xl">{children}</p>,
+        h1: ({ children }: any) => <h1 className="font-inter pb-4 pt-10 text-6xl">{children}</h1>,
+        h2: ({ children }: any) => <h2 className="font-inter pb-4 pt-8 text-5xl">{children}</h2>,
+        h3: ({ children }: any) => <h3 className="font-inter pb-2 pt-4 text-4xl">{children}</h3>,
+        h4: ({ children }: any) => <h4 className="font-inter text-3xl pb-2 pt-4">{children}</h4>,
+        h5: ({ children }: any) => <h5 className="font-inter text-2xl pb-2 pt-2">{children}</h5>,
+        h6: ({ children }: any) => <h6 className="font-inter text-xl pb-2 pt-2">{children}</h6>,
+        blockquote: ({ children }: any) => <blockquote className="border-l-accent-pink border-l-2 pl-4 mt-4 mb-10 italic font-sourceSerif4 text-xl">{children}</blockquote>,
 
     },
     list: {
-        bullet: ({ children }: any) => <ul className="ml-5 text-green-400">{children}</ul>,
-        number: ({ children }: any) => <ol className="ml-5">{children}</ol>,
+        bullet: ({ children }: any) => <ul className="pl-5 font-sourceSerif4 text-xl pb-4">{children}</ul>,
+        number: ({ children }: any) => <ol className="pl-5 font-sourceSerif4 text-xl pb-4">{children}</ol>,
     },
     listItem: {
-        bullet: ({ children }: any) => <li style={{ listStyleType: 'disclosure-closed' }}>{children}</li>,
-        number: ({ children }: any) => <li className=" list-decimal">{children}</li>,
+        bullet: ({ children }: any) => <li className="list-disc">{children}</li>,
+        number: ({ children }: any) => <li className="list-decimal">{children}</li>,
     },
 }
