@@ -83,7 +83,7 @@ export default function Homepage({
     }
 
     return (
-        <div className="bg-page-bg-grey max-h-screen overflow-hidden">
+        <div className="bg-page-bg-grey min-h-screen overflow-hidden">
             <div className="lg:max-w-screen-4xl mx-auto">
                 <Head>
                     <title>Dan Archer Online</title>
