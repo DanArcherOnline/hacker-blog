@@ -21,7 +21,7 @@ export default function PostPage({ post }: Props) {
                     <link rel="icon" href="/favicon.ico" />
                 </Head>
 
-                <PostNavigationComponents />
+                <PostNavigationComponents isAboutMePage={post.slug.current == 'about-me'} />
                 <main className={`flex flex-col pt-20 font-inter pb-16`}>
                     <div className="flex flex-col p-2 gap-2 md:px-8 max-w-3xl mx-auto">
                         <h1 className="font-black text-4xl md:text-6xl">{post.title}</h1>

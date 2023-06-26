@@ -45,15 +45,15 @@ export default function NavigationComponents({ filterCtfBadges, certificates, ct
             >
                 <Link
                     href='/'
-                    className="-m-4 p-4 flex items-center space-x-3 rounded-md hover:bg-accent-pink transition duration-300"
+                    className="-m-4 p-4 flex items-center space-x-3 rounded-md text-accent-pink hover:text-white hover:bg-accent-pink transition duration-300"
                 >
-                    <div>Home</div>
+                    Home
                 </Link>
                 <Link
                     href='/post/about-me'
                     className="-m-4 p-4 flex items-center space-x-3 rounded-md hover:bg-accent-pink transition duration-300"
                 >
-                    <div>About Me</div>
+                    About Me
                 </Link>
                 <div
                     className="-m-4 p-4 flex items-center space-x-3 rounded-md hover:bg-accent-pink transition duration-300"
@@ -63,7 +63,7 @@ export default function NavigationComponents({ filterCtfBadges, certificates, ct
                         setRightSidePanelContent(RightSidePanelContent.Certificates)
                     }}
                 >
-                    <div>Certficates</div>
+                    Certficates
                 </div>
                 <div
                     className="-m-4 p-4 flex items-center space-x-3 rounded-md hover:bg-accent-pink transition duration-300"
@@ -73,7 +73,7 @@ export default function NavigationComponents({ filterCtfBadges, certificates, ct
                         setRightSidePanelContent(RightSidePanelContent.CtfBadges)
                     }}
                 >
-                    <div>CTF & Challenges</div>
+                    CTF & Challenges
                 </div>
                 <Link
                     target="_blank"
@@ -81,7 +81,7 @@ export default function NavigationComponents({ filterCtfBadges, certificates, ct
                     href='/resume.pdf'
                     className="-m-4 p-4 flex items-center space-x-3 rounded-md hover:bg-accent-pink transition duration-300"
                 >
-                    <div>Download Resume</div>
+                    Download Resume
                 </Link>
 
             </SideNavMenu>

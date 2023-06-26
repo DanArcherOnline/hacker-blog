@@ -5,8 +5,11 @@ import NavBar from "./NavBar";
 import RightSidePanel from "./RightSidePanel";
 import SideNavMenu from "./SideNavMenu";
 
+interface Props {
+    isAboutMePage: boolean
+}
 
-export function PostNavigationComponents() {
+export function PostNavigationComponents({ isAboutMePage }: Props) {
     const [isMenuOpen, setMenuOpen] = useState<boolean>(false)
     const [isRightPanelOpen, setRightSidePanelOpen] = useState<boolean>(false)
 
@@ -15,7 +18,7 @@ export function PostNavigationComponents() {
             <Link href='/' className="-m-4 p-4 flex items-center space-x-3 rounded-md hover:bg-accent-pink transition duration-300">
                 Home
             </Link>
-            <Link href='/post/about-me' className="-m-4 p-4 flex items-center space-x-3 rounded-md hover:bg-accent-pink transition duration-300">
+            <Link href='/post/about-me' className={`${isAboutMePage && 'text-accent-pink hover:text-white'} -m-4 p-4 flex items-center space-x-3 rounded-md hover:bg-accent-pink transition duration-300`}>
                 About Me
             </Link>
         </SideNavMenu>
@@ -24,7 +27,7 @@ export function PostNavigationComponents() {
             <Link href='/' >
                 Home
             </Link>
-            <Link href='/post/about-me'>
+            <Link href='/post/about-me' className={`${isAboutMePage && 'text-accent-pink'}`}>
                 About Me
             </Link>
         </NavBar>
