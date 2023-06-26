@@ -9,13 +9,13 @@ export default function ProfileCard() {
         <div className="rounded drop-shadow-lg">
             <div className="relative rounded-t h-52 overflow-clip">
                 <Image
-                    src="/../public/profile_card_top.png"
+                    src="/profile_card_top.png"
                     alt=""
                     fill
                 />
                 <div className="absolute top-[40%] left-1/2 -translate-x-1/2 -translate-y-[40%] h-32 w-32 rounded-full border-2 border-purple-700 drop-shadow-xl overflow-clip hover:scale-110 group-hover:drop-shadow-md transform duration-300">
                     <Image
-                        src="/../public/profile_img.jpeg"
+                        src="/profile_img.jpeg"
                         alt=""
                         fill
                         className="object-cover"
