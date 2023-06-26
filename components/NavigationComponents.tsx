@@ -50,7 +50,7 @@ export default function NavigationComponents({ filterCtfBadges, certificates, ct
                     <div>Home</div>
                 </Link>
                 <Link
-                    href='#'
+                    href='/post/about-me'
                     className="-m-4 p-4 flex items-center space-x-3 rounded-md hover:bg-accent-pink transition duration-300"
                 >
                     <div>About Me</div>

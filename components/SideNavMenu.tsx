@@ -44,43 +44,6 @@ export default function SideNavMenu({
                     <div>
                         <nav className="grid gap-y-8 p-4">
                             {children}
-                            {/* <Link
-                                href='/'
-                                className="-m-4 p-4 flex items-center space-x-3 rounded-md hover:bg-accent-pink transition duration-300"
-                            >
-                                <div>Home</div>
-                            </Link>
-                            <Link
-                                href='#'
-                                className="-m-4 p-4 flex items-center space-x-3 rounded-md hover:bg-accent-pink transition duration-300"
-                            >
-                                <div>About Me</div>
-                            </Link>
-                            <div
-                                className="-m-4 p-4 flex items-center space-x-3 rounded-md hover:bg-accent-pink transition duration-300"
-                                onClick={() => {
-                                    setMenuState(false)
-                                    setRightPanelState(true)
-                                }}
-                            >
-                                <div>Certficates</div>
-                            </div>
-                            <div
-                                className="-m-4 p-4 flex items-center space-x-3 rounded-md hover:bg-accent-pink transition duration-300"
-                                onClick={() => {
-                                    setMenuState(false)
-                                    setRightPanelState(true)
-                                }}
-                            >
-                                <div>CTF & Challenges</div>
-                            </div>
-                            <Link
-                                href='#'
-                                className="-m-4 p-4 flex items-center space-x-3 rounded-md hover:bg-accent-pink transition duration-300"
-                            >
-                                <div>Download Resume</div>
-                            </Link> */}
-
                         </nav>
                     </div>
                 </div>
