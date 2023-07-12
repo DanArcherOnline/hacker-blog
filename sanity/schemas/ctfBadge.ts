@@ -9,6 +9,9 @@ export default defineType({
             name: 'badge',
             title: 'Badge Image',
             type: 'image',
+            options: {
+                hotspot: true,
+            },
         }),
         defineField({
             name: 'name',
@@ -37,7 +40,7 @@ export default defineType({
         select: {
             title: 'name',
             company: 'company',
-            media: 'logo',
+            media: 'badge',
         },
         prepare(selection) {
             const { company } = selection
