@@ -10,7 +10,7 @@ interface Props {
 
 export default function CTFItem({ ctfBadge }: Props) {
     const ctfItemComponent =
-        <div className="flex items-center gap-2 group">
+        <div className="flex items-center gap-3 group">
             <div className="relative w-24 h-24">
                 <Image
                     src={urlFor(ctfBadge.badge).url()}
@@ -20,7 +20,7 @@ export default function CTFItem({ ctfBadge }: Props) {
                 />
                 {ctfBadge.post?.slug && <CTFProvidedIcon className="w-6 h-6 absolute bottom-2 right-2 drop-shadow-lg group-hover:scale-150 group-hover:drop-shadow-md transform duration-300" />}
             </div>
-            <div className="flex flex-col">
+            <div className="flex flex-col w-full">
                 <h1 className="font-black text-white text-lg">{ctfBadge.name}</h1>
                 {ctfBadge.event && <h2 className="font-light text-white text-base">{ctfBadge.event}</h2>}
                 <h3 className="font-light text-xs text-accent-pink">{ctfBadge.platform}</h3>

@@ -12,7 +12,7 @@ export default function CertificateItem({ certificate }: Props) {
         <div className="flex flex-col group">
             <hr className="border-page-bg-grey" />
             <div className="pt-8">
-                <div className="flex items-center gap-2 mb-4">
+                <div className="flex items-center gap-3 mb-4">
                     <div className="relative w-24 h-24">
                         <Image
                             src={urlFor(certificate.logo).url()}
@@ -21,7 +21,7 @@ export default function CertificateItem({ certificate }: Props) {
                             className="object-contain group-hover:scale-110 group-hover:drop-shadow-md transform duration-300"
                         />
                     </div>
-                    <div className="flex flex-col">
+                    <div className="flex flex-col w-full">
                         <h1 className="font-black text-white text-lg">{certificate.name}</h1>
                         <h2 className="font-light text-white text-base">{certificate.company}</h2>
                     </div>

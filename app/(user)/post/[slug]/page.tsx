@@ -15,7 +15,7 @@ export async function generateStaticParams() {
         slug
     }`
     const posts: Post[] = await client.fetch(query)
-    return posts.map((post) => { post.slug.current })
+    return posts.map((post) => { post.slug?.current })
 
 }
 
