@@ -51,7 +51,7 @@ export default function PostFilters({ postsCount, onFilterChanged }: Props) {
                         />
                     </div>
                 </div>
-                <Searchbar onSearch={(updatedSearchTerm) => {
+                <Searchbar placeholder="Search for posts..." onSearch={(updatedSearchTerm) => {
                     setSearchTerm(updatedSearchTerm)
                     onFilterChanged(category, updatedSearchTerm)
                 }} />

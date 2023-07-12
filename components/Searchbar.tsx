@@ -5,9 +5,10 @@ import { useState } from "react"
 
 interface Props {
     onSearch: (searchTerm: string) => void
+    placeholder: string
 }
 
-export default function Searchbar({ onSearch }: Props) {
+export default function Searchbar({ onSearch, placeholder }: Props) {
     const [searchText, setSearchText] = useState<string>("")
 
     return (
@@ -16,7 +17,7 @@ export default function Searchbar({ onSearch }: Props) {
                 <input
                     className="bg-transparent border-none outline-none placeholder:text-white font-black text-sm"
                     type="search"
-                    placeholder="Search for posts..."
+                    placeholder={placeholder}
                     value={searchText}
                     onChange={(e) => {
                         const searchTerm = e.target.value
