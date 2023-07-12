@@ -24,7 +24,7 @@ export default function FeaturedPost({ post }: Props) {
             <p className="text-md mb-8">{post.description}</p>
             <Button href={`/post/${post.slug.current}`}>Read Now</Button>
             <div className="flex flex-wrap gap-2">
-                {post.tags.map((tag, i) => <Tag outline key={i}>{tag.name}</Tag>)}
+                {post.tags?.map((tag, i) => <Tag outline key={i}>{tag.name}</Tag>)}
             </div>
         </div>
     </Link>

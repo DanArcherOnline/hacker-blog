@@ -57,7 +57,7 @@ export default function Homepage({
             filteredPosts = filteredPosts.filter((post) => {
                 return post.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
                     post.description.toLowerCase().includes(searchTerm.toLowerCase()) ||
-                    post.tags.some((tag) => tag.name.toLowerCase().includes(searchTerm.toLowerCase()))
+                    post.tags?.some((tag) => tag.name.toLowerCase().includes(searchTerm.toLowerCase()))
             })
         }
         setPosts(filteredPosts)
