@@ -15,7 +15,7 @@ export default function NavBar({ isOpen: isMenuOpen, setMenuOpen, setRightSidePa
                 <div className="flex justify-between items-center">
                     <div className="lg:w-0 lg:flex-1">
                         <Link href="/" className="flex items-center">
-                            <div><span className="text-accent-pink">DANARCHER</span>ONLINE</div>
+                            <div><span className="text-accent-pink">DANARCHER</span>HACKING</div>
                         </Link>
                     </div>
                     <div className="-mr-2 -my-2 md:hidden">
