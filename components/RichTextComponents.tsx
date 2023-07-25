@@ -18,7 +18,7 @@ export const RichTextComponents = {
             return <div className="w-full pb-8 pt-4">
                 <Refractor
                     value={value.code}
-                    language={value.language}
+                    language={value?.language ?? "markdown"}
                     markers={value.highlightedLines}
                     className="rounded-lg"
                 />

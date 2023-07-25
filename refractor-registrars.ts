@@ -1,6 +1,5 @@
 import Refractor from 'react-refractor';
 import bash from 'refractor/lang/bash';
-import batch from 'refractor/lang/batch';
 import csharp from 'refractor/lang/csharp';
 import css from 'refractor/lang/css';
 import go from 'refractor/lang/go';
@@ -19,8 +18,8 @@ import tsx from 'refractor/lang/tsx';
 import typescript from 'refractor/lang/typescript';
 import xmlDoc from 'refractor/lang/xml-doc';
 import yaml from 'refractor/lang/yaml';
+import http from 'refractor/lang/http';
 
-Refractor.registerLanguage(batch);
 Refractor.registerLanguage(csharp);
 Refractor.registerLanguage(css);
 Refractor.registerLanguage(go);
@@ -40,3 +39,4 @@ Refractor.registerLanguage(tsx);
 Refractor.registerLanguage(typescript);
 Refractor.registerLanguage(xmlDoc);
 Refractor.registerLanguage(yaml);
+Refractor.registerLanguage(http);
