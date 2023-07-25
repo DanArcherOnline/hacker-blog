@@ -2,17 +2,13 @@ import { urlFor } from "@/sanity/sanity-utils";
 import Image from "next/image";
 import Refractor from "react-refractor";
 import "../refractor-registrars";
+import BlogPostImage from "./BlogPostImage";
 
 export const RichTextComponents = {
     types: {
         image: ({ value }: any) => {
-            return <div className="relative w-full h-96 mx-auto mb-12 mt-8">
-                <Image
-                    className="object-contain"
-                    src={urlFor(value).url()}
-                    alt={value.alt}
-                    fill />
-            </div>
+            const imageUrl = urlFor(value).url();
+            return <BlogPostImage imageUrl={imageUrl} alt={value.alt} />
         },
         code: ({ value }: any) => {
             return <div className="w-full pb-8 pt-4">
