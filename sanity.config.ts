@@ -25,6 +25,14 @@ export default defineConfig({
           name: 'http',
           loader: () => import('@codemirror/legacy-modes/mode/http').then(({http}) => StreamLanguage.define(http)),
         },
+        {
+          name: 'latex',
+          loader: () => import('@codemirror/legacy-modes/mode/stex').then(({stex}) => StreamLanguage.define(stex)),
+        },
+        {
+          name: 'powershell',
+          loader: () => import('@codemirror/legacy-modes/mode/powershell').then(({powerShell}) => StreamLanguage.define(powerShell)),
+        },
       ],
     }),
     deskTool(),

@@ -19,6 +19,8 @@ import typescript from 'refractor/lang/typescript';
 import xmlDoc from 'refractor/lang/xml-doc';
 import yaml from 'refractor/lang/yaml';
 import http from 'refractor/lang/http';
+import latex from 'refractor/lang/latex';
+import powershell from 'refractor/lang/powershell';
 
 Refractor.registerLanguage(csharp);
 Refractor.registerLanguage(css);
@@ -40,3 +42,5 @@ Refractor.registerLanguage(typescript);
 Refractor.registerLanguage(xmlDoc);
 Refractor.registerLanguage(yaml);
 Refractor.registerLanguage(http);
+Refractor.registerLanguage(latex);
+Refractor.registerLanguage(powershell);

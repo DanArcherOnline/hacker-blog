@@ -100,6 +100,8 @@ export default defineType({
             { title: 'Typescript', value: 'typescript' },
             { title: 'XML', value: 'xml-doc' },
             { title: 'YAML', value: 'yaml' },
+            { title: 'LaTeX', value: 'latex' },
+            { title: 'Powershell', value: 'powershell' },
         ],
         withFilename: true,
       },
